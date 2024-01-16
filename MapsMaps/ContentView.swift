@@ -11,8 +11,7 @@ import MapKit
 struct ContentView: View {
     @State private var selectedMapOption: MapOptions = .standard
     @State private var cameraPosition: MapCameraPosition = .userLocation(fallback: .automatic)
-    
-    private var locationManager = LocationManager.shared
+    @State private var locationManager = LocationManager.shared
     
     var body: some View {
         ZStack(alignment: .top) {
@@ -22,7 +21,17 @@ struct ContentView: View {
                 }
                 UserAnnotation()
             }
+            .mapControls {
+                MapUserLocationButton()
+                MapCompass()
+                MapScaleView()
+            }
             .mapStyle(selectedMapOption.mapStyle)
+            .onChange(of: locationManager.region) {
+                withAnimation {
+                    cameraPosition = .region(locationManager.region)
+                }
+            }
             
             Picker("Map Styles", selection: $selectedMapOption) {
                 ForEach(MapOptions.allCases) { option in
@@ -30,7 +39,17 @@ struct ContentView: View {
                 }
             }
             .pickerStyle(.segmented)
-            .padding()
+            .padding([.top], 40)
+            .padding([.trailing], 60)
+            .padding([.leading], 20)
+            
+            VStack {
+                Spacer()
+                Button("Coffee") {
+                    cameraPosition = .region(.testRegion)
+                }
+                .buttonStyle(.borderedProminent)
+            }
         }
     }
 }

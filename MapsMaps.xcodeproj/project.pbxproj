@@ -17,6 +17,7 @@
 		8FB5E5C52B560A5700CEE033 /* MapsMapsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB5E5C42B560A5700CEE033 /* MapsMapsTests.swift */; };
 		8FB5E5CF2B560A5700CEE033 /* MapsMapsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB5E5CE2B560A5700CEE033 /* MapsMapsUITests.swift */; };
 		8FB5E5D12B560A5700CEE033 /* MapsMapsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB5E5D02B560A5700CEE033 /* MapsMapsUITestsLaunchTests.swift */; };
+		8FD6623E2B572F790049FD5C /* MKCoordinateRegion+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD6623D2B572F790049FD5C /* MKCoordinateRegion+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		8FB5E5CA2B560A5700CEE033 /* MapsMapsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapsMapsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FB5E5CE2B560A5700CEE033 /* MapsMapsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsMapsUITests.swift; sourceTree = "<group>"; };
 		8FB5E5D02B560A5700CEE033 /* MapsMapsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsMapsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8FD6623D2B572F790049FD5C /* MKCoordinateRegion+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKCoordinateRegion+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				8F51AAA42B561F0B002FB523 /* CLLocationCoordinate2D+Extension.swift */,
+				8FD6623D2B572F790049FD5C /* MKCoordinateRegion+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F51AAA22B5617C0002FB523 /* LocationManager.swift in Sources */,
+				8FD6623E2B572F790049FD5C /* MKCoordinateRegion+Extension.swift in Sources */,
 				8FB5E5B52B560A5500CEE033 /* ContentView.swift in Sources */,
 				8F51AAA52B561F0B002FB523 /* CLLocationCoordinate2D+Extension.swift in Sources */,
 				8FB5E5B32B560A5500CEE033 /* MapsMapsApp.swift in Sources */,
