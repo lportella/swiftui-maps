@@ -35,8 +35,10 @@ extension LocationManager: CLLocationManagerDelegate {
 
 private extension LocationManager {
     func handleAuth() {
-        if self.manager.authorizationStatus == .notDetermined {
-            self.manager.requestWhenInUseAuthorization()
+        if manager.authorizationStatus == .notDetermined {
+            manager.requestWhenInUseAuthorization()
+            requestLocation()
+        } else if manager.authorizationStatus == .authorizedWhenInUse || manager.authorizationStatus == .authorizedAlways {
             requestLocation()
         }
     }

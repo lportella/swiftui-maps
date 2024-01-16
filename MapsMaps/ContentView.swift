@@ -35,6 +35,14 @@ struct ContentView: View {
             }
             .pickerStyle(.segmented)
             .padding()
+            
+            VStack {
+                Spacer()
+                Button("Coffee") {
+                    cameraPosition = .region(.testRegion)
+                }
+                .buttonStyle(.borderedProminent)
+            }
         }
     }
 }

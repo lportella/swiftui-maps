@@ -7,4 +7,8 @@ extension MKCoordinateRegion: Equatable {
         lhs.span.latitudeDelta == rhs.span.latitudeDelta &&
         lhs.span.longitudeDelta == rhs.span.latitudeDelta
     }
+    
+    static var testRegion: Self {
+        .init(center: .testLocation, latitudinalMeters: 100, longitudinalMeters: 100)
+    }
 }
