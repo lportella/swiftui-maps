@@ -11,11 +11,25 @@ import Observation
         super.init()
         self.manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
-        handleAuth()
     }
 }
 
 extension LocationManager: CLLocationManagerDelegate {
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        switch manager.authorizationStatus {
+        case .notDetermined:
+            manager.requestWhenInUseAuthorization()
+        case .authorizedAlways, .authorizedWhenInUse:
+            manager.requestLocation()
+        case .denied:
+            print("denied") // TODO: implement error handling
+        case .restricted:
+            print("restricted") // TODO: implement error handling
+        @unknown default:
+            break
+        }
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         locations.last.map {
             region = MKCoordinateRegion(
@@ -30,20 +44,5 @@ extension LocationManager: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)
-    }
-}
-
-private extension LocationManager {
-    func handleAuth() {
-        if manager.authorizationStatus == .notDetermined {
-            manager.requestWhenInUseAuthorization()
-            requestLocation()
-        } else if manager.authorizationStatus == .authorizedWhenInUse || manager.authorizationStatus == .authorizedAlways {
-            requestLocation()
-        }
-    }
-    
-    func requestLocation() {
-        self.manager.requestLocation()
     }
 }
