@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F51AA9F2B56113C002FB523 /* MapOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F51AA9E2B56113C002FB523 /* MapOptions.swift */; };
 		8FB5E5B32B560A5500CEE033 /* MapsMapsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB5E5B22B560A5500CEE033 /* MapsMapsApp.swift */; };
 		8FB5E5B52B560A5500CEE033 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB5E5B42B560A5500CEE033 /* ContentView.swift */; };
 		8FB5E5B72B560A5700CEE033 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FB5E5B62B560A5700CEE033 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8F51AA9E2B56113C002FB523 /* MapOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapOptions.swift; sourceTree = "<group>"; };
 		8FB5E5AF2B560A5500CEE033 /* MapsMaps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapsMaps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FB5E5B22B560A5500CEE033 /* MapsMapsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsMapsApp.swift; sourceTree = "<group>"; };
 		8FB5E5B42B560A5500CEE033 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -72,6 +74,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8F51AA9D2B56112C002FB523 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8F51AA9E2B56113C002FB523 /* MapOptions.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		8FB5E5A62B560A5500CEE033 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +105,7 @@
 		8FB5E5B12B560A5500CEE033 /* MapsMaps */ = {
 			isa = PBXGroup;
 			children = (
+				8F51AA9D2B56112C002FB523 /* Model */,
 				8FB5E5B22B560A5500CEE033 /* MapsMapsApp.swift */,
 				8FB5E5B42B560A5500CEE033 /* ContentView.swift */,
 				8FB5E5B62B560A5700CEE033 /* Assets.xcassets */,
@@ -261,6 +272,7 @@
 			files = (
 				8FB5E5B52B560A5500CEE033 /* ContentView.swift in Sources */,
 				8FB5E5B32B560A5500CEE033 /* MapsMapsApp.swift in Sources */,
+				8F51AA9F2B56113C002FB523 /* MapOptions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
