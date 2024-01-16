@@ -6,16 +6,32 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct ContentView: View {
+    @State private var selectedMapOption: MapOptions = .standard
+    @State private var cameraPosition: MapCameraPosition = .userLocation(fallback: .automatic)
+    
+    private var locationManager = LocationManager.shared
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack(alignment: .top) {
+            Map(position: $cameraPosition) {
+                Annotation("Brauð & Co", coordinate: .testLocation) {
+                    Image(systemName: "fork.knife.circle")
+                }
+                UserAnnotation()
+            }
+            .mapStyle(selectedMapOption.mapStyle)
+            
+            Picker("Map Styles", selection: $selectedMapOption) {
+                ForEach(MapOptions.allCases) { option in
+                    Text(option.rawValue.capitalized).tag(option)
+                }
+            }
+            .pickerStyle(.segmented)
+            .padding()
         }
-        .padding()
     }
 }
 
