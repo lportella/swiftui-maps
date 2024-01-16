@@ -21,6 +21,11 @@ struct ContentView: View {
                 }
                 UserAnnotation()
             }
+            .mapControls {
+                MapUserLocationButton()
+                MapCompass()
+                MapScaleView()
+            }
             .mapStyle(selectedMapOption.mapStyle)
             .onChange(of: locationManager.region) {
                 withAnimation {
@@ -34,7 +39,9 @@ struct ContentView: View {
                 }
             }
             .pickerStyle(.segmented)
-            .padding()
+            .padding([.top], 40)
+            .padding([.trailing], 60)
+            .padding([.leading], 20)
             
             VStack {
                 Spacer()
