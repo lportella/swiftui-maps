@@ -17,7 +17,7 @@ struct ContentView: View {
     var body: some View {
         ZStack(alignment: .top) {
             Map(position: $cameraPosition) {
-                Annotation("Brauð & Co", coordinate: locationManager.testLocation) {
+                Annotation("Brauð & Co", coordinate: .testLocation) {
                     Image(systemName: "fork.knife.circle")
                 }
                 UserAnnotation()
